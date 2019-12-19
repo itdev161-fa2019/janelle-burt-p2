@@ -5,52 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Business Listing</title>
-
+    <title>Milwaukee Business Listings</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 
 <body>
     <div class="container">
         <hr>
         <h1>Create New Listing</h1>
+        <button onclick="window.location.href='./business-list.html'" class="btn btn-primary" type="button">
+            View Listing</button>
         <hr>
     
 
         <form action="http://localhost:3000/business" method="POST">
             <div class="form-group">
-                <label for="exampleInputPassword1">Phone Number</label>
+                <label for="text">Phone Number</label>
                 <input class="form-control" name="phone">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Name</label>
+                <label for="text">Name</label>
                 <input class="form-control" name="name">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Address</label>
+                <label for="text">Address</label>
                 <input class="form-control" name="address">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Member Since</label>
-                <input type="date" class="form-control" name="member_since">
+                <label for="text">Member Since</label>
+                <input type="year" class="form-control" name="member_since">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">County</label>
+                <label for="text">County</label>
                 <input class="form-control" name="county">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Business Type</label>
-                <input type="number" class="form-control" name="business_type">
+                <label for="text">Business Type</label>
+                <input class="form-control" name="business_type">
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+           
         </form>
     </div>
+    <script src="\business-list.js"></script>
 </body>
 
+
 </html>
+

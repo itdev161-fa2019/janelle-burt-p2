@@ -38,7 +38,6 @@ app.use(bodyParser.json());
 app.post('/business', (req, res) => {
     const business = req.body;
 
-    // output the business to the console for debugging
     console.log(business);
     businesses.push(business);
 
@@ -99,4 +98,4 @@ app.post('/business/:phone', (req, res) => {
     res.send('Entry has been edited');
 });
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
+app.listen(port, () => console.log(`Listening on port ${port}!`));

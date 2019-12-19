@@ -1,7 +1,7 @@
 const setEditModal = (phone) => {
     const xhttp = new XMLHttpRequest();
 
-    xhttp.open("GET", `http://localhost:3000/business/${phone}`, false);
+    xhttp.open("GET", `http://localhost:3000/businesses/${phone}`, false);
     xhttp.send();
 
     const business = JSON.parse(xhttp.responseText);
@@ -41,7 +41,7 @@ const deletebusiness = (phone) => {
     location.reload();
 }
 
-const loadbusinesses = () => {
+const loadBusinesses = () => {
     const xhttp = new XMLHttpRequest();
 
     xhttp.open("GET", "http://localhost:3000/business", false);
@@ -56,9 +56,9 @@ const loadbusinesses = () => {
                     <div class="card-body">
                         <h5 class="card-name">${business.name}</h5>
                         <h6 class="card-subname mb-2 text-muted">${business.phone}</h6>
+                        <div>Address: ${business.address}</div>
+                        <hr>
                         <div>Member Since: ${business.member_since}</div>
-                        <div>County: ${business.address}</div>
-
                         <div>County: ${business.county}</div>
                         <div>Business Type: ${business.business_type}</div>
                         <hr>
@@ -76,4 +76,4 @@ const loadbusinesses = () => {
     }
 }
 
-loadbusinesses();
+loadBusinesses();
