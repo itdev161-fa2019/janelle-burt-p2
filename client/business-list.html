@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Business Directory</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <hr>
+        <h1>Digital Agencies</h1>
+        <hr>
+
+        <div>
+            <div class="row" id="businesses">
+            </div>
+        </div>
+    </div>
+
+    <div id="editBusinessModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Listing</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                        <form id="editForm" method="POST">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Phone Number</label>
+                                <input class="form-control" name="phone" id="phone">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Name</label>
+                                <input class="form-control" name="address" id="address">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Address</label>
+                                <input class="form-control" name="member_since" id="member_since">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Member Since</label>
+                                <input type="date" class="form-control" name="member_since" id="member_since">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Business Type</label>
+                                <input class="form-control" name="business_type" id="business_type">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">County</label>
+                                <input type="number" class="form-control" name="county" id="county">
+                            </div>
+                
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="business-list.js"></script>
+</body>
+
+</html>
