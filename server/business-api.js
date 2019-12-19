@@ -12,7 +12,7 @@ let businesses = [{
     "member_since": "2014",
     "county": "Milwaukee",
     "business_type": "Agency",
-    "_description": "Ecommerce solutions provider",
+    "description": "Ecommerce solutions provider",
     
 },
 {
