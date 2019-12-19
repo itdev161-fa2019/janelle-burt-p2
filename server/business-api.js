@@ -56,8 +56,18 @@ let businesses = [{
     "business_type": "Agency",
     "description": "Marketing agency located in downtown Milwaukee",
 
-}
+},
 
+{
+    "phone": "4142720557",
+    "address": "735 N. Water Street",
+    "name": "OnMilwaukee",
+    "member_since": "2015",
+    "county": "Milwaukee",
+    "business_type": "Agency",
+    "description": "Milwaukee city guide and entertainment magazine",
+
+},
 ];
 
 app.use(cors());

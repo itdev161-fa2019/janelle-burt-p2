@@ -8,26 +8,35 @@ const loadBusinesses = () => {
 
     for (let business of businesses) {
         const x = `
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-name">${business.name}</h5>
-                        <h6 class="card-subname mb-2 text-muted">${business.phone}</h6>
-                        <div>Address: ${business.address}</div>
-                        <hr>
-                        <div>Member Since: ${business.member_since}</div>
-                        <div>County: ${business.county}</div>
-                        <div>Business Type: ${business.business_type}</div>
-                        <hr>
-                        <div>Description: ${business.description}</div>
-
-                        <hr>
-                        
-                    </div>
-                </div>
-            </div>
+        <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th style="width: 20%" scope="col">Name</th>
+            <th style="width: 20%" scope="col">Phone</th>
+            <th style="width: 20%" scope="col">Address</th>
+            <th style="width: 20%" scope="col">Member Since</th>
+            <th style="width: 20%" scope="col">County</th>
+            <th style="width: 20%" scope="col">Business Type</th>
+            <th style="width: 20%" scope="col">Description</th>
+                </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>${business.name}</td>
+          <td>${business.phone}</td>
+          <td>${business.address}</td>
+              <td>${business.member_since}</td>
+          <td>${business.county}</td>
+            <td> ${business.business_type}</td>
+            <td>${business.description}</td>
+          </tr>
+          
+        
+      </table>
+      
         `
 
+       
         document.getElementById('businesses').innerHTML = document.getElementById('businesses').innerHTML + x;
     }
 }
