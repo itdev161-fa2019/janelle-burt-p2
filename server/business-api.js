@@ -12,6 +12,8 @@ let businesses = [{
     "member_since": "2014",
     "county": "Milwaukee",
     "business_type": "Agency",
+    "_description": "Ecommerce solutions provider",
+    
 },
 {
     "phone": "2628213999",
@@ -20,6 +22,8 @@ let businesses = [{
     "member_since": "2019",
     "county": "Waukesha",
     "business_type": "Agency",
+    "description": " Content marketing agency",
+
 },
 {
     "phone": "4144362200",
@@ -28,7 +32,33 @@ let businesses = [{
     "member_since": "2018",
     "county": "Milwaukee",
     "business_type": "Agency",
-}];
+    "description": " Internet marketing company",
+
+
+
+},
+{
+    "phone": "4149149102",
+    "address": "1572 E Capitol Drive",
+    "name": "Northwoods Web Solutions",
+    "member_since": "2019",
+    "county": "Milwaukee",
+    "business_type": "Agency",
+    "description": "Digital marketing provder",
+
+},
+{
+    "phone": "4142204340",
+    "address": "324 E Wisconsin Ave #200",
+    "name": "Sosh",
+    "member_since": "2018",
+    "county": "Milwaukee",
+    "business_type": "Agency",
+    "description": "Marketing agency located in downtown Milwaukee",
+
+}
+
+];
 
 app.use(cors());
 
@@ -41,7 +71,7 @@ app.post('/business', (req, res) => {
     console.log(business);
     businesses.push(business);
 
-    res.send('Entry has been added to the database');
+    res.send('Entry has been added to the database. You can now view the listing on our directory page!');
 });
 
 app.get('/business', (req, res) => {
@@ -64,21 +94,10 @@ app.get('/business/:phone', (req, res) => {
     res.status(404).send('Business not found');
 });
 
-app.delete('/business/:phone', (req, res) => {
-    // reading phone from the URL
-    const phone = req.params.phone;
 
-    // remove item from the businesses array
-    business = businesses.filter(i => {
-        if (i.phone !== phone) {
-            return true;
-        }
 
-        return false;
-    });
+   
 
-    res.send('Entry not found');
-});
 
 app.post('/business/:phone', (req, res) => {
     // reading phone from the URL

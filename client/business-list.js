@@ -1,46 +1,3 @@
-const setEditModal = (phone) => {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.open("GET", `http://localhost:3000/businesses/${phone}`, false);
-    xhttp.send();
-
-    const business = JSON.parse(xhttp.responseText);
-
-   /* "phone": "4144254069",
-    "address": "229 E Wisconsin Avenue",
-    "name": "Brilliance Business Solutions",
-    "member_since": "2014",
-    "county": "Milwaukee",
-    "business_type": "Agency",*/
-
-    const {
-        address, 
-        name, 
-        member_since, 
-        county,
-        business_type
-    } = business;
-
-    document.getElementById('phone').value = phone;
-    document.getElementById('address').value = address;
-    document.getElementById('name').value = name;
-    document.getElementById('member_since').value = member_since;
-    document.getElementById('county').value = county;
-    document.getElementById('business_type').value = business_type;
-
-    // setting up the action url 
-    document.getElementById('editForm').action = `http://localhost:3000/business/${phone}`;
-}
-
-const deletebusiness = (phone) => {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.open("DELETE", `http://localhost:3000/business/${phone}`, false);
-    xhttp.send();
-
-    location.reload();
-}
-
 const loadBusinesses = () => {
     const xhttp = new XMLHttpRequest();
 
@@ -62,11 +19,10 @@ const loadBusinesses = () => {
                         <div>County: ${business.county}</div>
                         <div>Business Type: ${business.business_type}</div>
                         <hr>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                        <button types="button" class="btn btn-primary" data-toggle="modal" 
-                            data-target="#editbusinessModal" onClick="setEditModal(${business.phone})">
-                            Edit
-                        </button>
+                        <div>Description: ${business.description}</div>
+
+                        <hr>
+                        
                     </div>
                 </div>
             </div>
